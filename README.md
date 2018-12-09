@@ -23,6 +23,4 @@ This is a game for fun you can also use it for example.
 
  ~~For this 0.01 version I created a maze and a character that you can control with The four direction keys.In later version I'll create enemy and more traps. I got this from a Youtube video. <a href="https://www.youtube.com/watch?v=sVUNibx2gxc&t=27s">Click here to See how that person make the game!!! </a>~~
 
-↑↑↑↑
-Orginal Creator
 This version of Zombie-head-maze-game-Python-turtle is being edited. I added a lot of ~~shit~~ into it. Hope this will bring more fun.
