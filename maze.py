@@ -1,11 +1,12 @@
 import turtle
 import math
+import os
 import tkinter
 from time import *
 import pygame
 from tkinter.constants import *
 pygame.mixer.init()
-pygame.mixer.music.load("./Music/SoundTest.wav")
+pygame.mixer.music.load("./Music/BGM.ogg")
 pygame.mixer.music.play()
 
 wn = turtle.Screen()
@@ -141,14 +142,22 @@ def setup_maze(level):
                         elif character =="T":
                                 treasures.append(Treasure(screen_x,screen_y))
 def win():
+    global tk
     tk = tkinter.Tk()
     frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
     frame.pack(fill=BOTH,expand=1)
-    label = tkinter.Label(frame, text="You Win")
+    tk.title("You Won")
+    label = tkinter.Label(frame, text="You Won")
     label.pack(fill=X, expand=1)
-    button = tkinter.Button(frame,text="OK",command=quit)
-    button.pack(side=BOTTOM)
+    button = tkinter.Button(frame,text="Quit",command=quit)
+    button.pack(side=LEFT)
+    button2 = tkinter.Button(frame,text="Restart",command=restart)
+    button2.pack(side=RIGHT)
     tk.mainloop()
+def restart():
+    tk.destroy()
+    import maze
+    quit()
 def Starttime():
         treasure.destroy()
         treasures.remove(treasure)
@@ -168,9 +177,9 @@ def Starttime():
         turtle.penup()
         turtle.goto(10,300)
         turtle.color("Blue")
-        turtle.write("Its fake gold!!! Current FPS:1",align="left", font=(10))
+        turtle.write("Its fake coin!!! Start lagging...",align="left", font=(10))
         turtle.goto(-50,300)
-        turtle.write("Reinstalling Drivers in 20 seconds",align="right",font=(0.0000001))
+        turtle.write("Restore in 20 seconds",align="right",font=(0.0000001))
         turtle.goto(2000,2000)
 
 
@@ -187,7 +196,7 @@ def Starttime():
                 wn.update()
                 x.clear()
         end_timer = time()
-        pygame.mixer.music.load("./Music/SoundTest.wav")
+        pygame.mixer.music.load("./Music/BGM.ogg")
         pygame.mixer.music.play()
         turtle.clear()
 
