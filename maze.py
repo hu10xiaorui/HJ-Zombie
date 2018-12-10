@@ -78,9 +78,8 @@ class Treasure(turtle.Turtle):
         def __init__(self, x, y):
                 turtle.Turtle.__init__(self)
                 v=self.getscreen()
-                v.register_shape("./image/treasure.gif")
-                self.shape("./image/treasure.gif")
-                self.color("gold")
+                v.register_shape("./image/coin.gif")
+                self.shape("./image/coin.gif")
                 self.penup()
                 self.speed(0)
                 self.gold = 100
